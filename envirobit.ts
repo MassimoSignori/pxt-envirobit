@@ -240,7 +240,7 @@ namespace envirobit {
             this.watching = false
             this.clap_time = 0
             this.sample = 0
-            this.samples = [0, 0, 0, 0, 0]
+            this.samples = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
         }
 
         watchLevel(): void {
@@ -258,8 +258,8 @@ namespace envirobit {
 
         getLevel(): number {
             let level: number = 0;
-            for (let x: number = 0; x < 5; x++){
-                let sample: number = _sound.samples[x]
+            for (let x: number = 0; x < 10; x++){
+                let sample: number = Math.abs(_sound.samples[x])
                 if (sample > level) {
                     level = sample
                 }
