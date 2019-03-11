@@ -53,7 +53,7 @@ namespace envirobit {
             control.waitMicros(200000)
             smbus.writeByte(this.addr, 0xf4, 0b10110111) // x16 oversampling, normal mode
             control.waitMicros(200000)
-            smbus.writeByte(this.addr, 0xf5, 0b10010000) // 500ms standby time, 16 filter coef
+            smbus.writeByte(this.addr, 0xf5, 0b00010000) // 500ms standby time, 16 filter coef
             control.waitMicros(200000)
 
             let compensation: number[] = smbus.unpack("<HhhHhhhhhhhhbB", smbus.readBuffer(this.addr, 0x88, 26))
